@@ -1,2 +1,2 @@
-# choice
+# Choice
 Helps you choose 
