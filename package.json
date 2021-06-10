@@ -1,0 +1,21 @@
+{
+  "name": "choice",
+  "version": "1.0.0",
+  "description": "Helps you choose for those who have decision paralysis",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniel-sungwon-lee/choice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daniel-sungwon-lee/choice/issues"
+  },
+  "homepage": "https://github.com/daniel-sungwon-lee/choice#readme"
+}
