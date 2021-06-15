@@ -12,10 +12,17 @@
     "url": "git+https://github.com/daniel-sungwon-lee/choice.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Daniel Sungwon Lee",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/daniel-sungwon-lee/choice/issues"
   },
-  "homepage": "https://github.com/daniel-sungwon-lee/choice#readme"
+  "homepage": "https://github.com/daniel-sungwon-lee/choice#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "nodemon": "^2.0.7"
+  }
 }
