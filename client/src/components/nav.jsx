@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Fade, Toolbar } from '@material-ui/core';
+import { AppBar, Toolbar, Slide } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
@@ -16,7 +16,7 @@ export default function Nav(props) {
   const classes = useStyles()
 
   return (
-    <Fade in>
+    <Slide in direction="down">
       <div className="mb-5 sticky-top">
         <AppBar position="sticky" classes={{ root: classes.nav }}>
           <Toolbar className="justify-content-between">
@@ -35,6 +35,6 @@ export default function Nav(props) {
           </Toolbar>
         </AppBar>
       </div>
-    </Fade>
+    </Slide>
   )
 }
