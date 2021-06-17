@@ -1,5 +1,6 @@
 import React from 'react';
-import { AppBar, Toolbar, Slide } from '@material-ui/core';
+import { AppBar, Toolbar, Slide, IconButton } from '@material-ui/core';
+import { InfoRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
@@ -9,6 +10,9 @@ const useStyles = makeStyles({
   popover: {
     width: "14rem",
     marginTop: "1.1rem"
+  },
+  info: {
+    color: "#FFEB99"
   }
 })
 
@@ -29,6 +33,9 @@ export default function Nav(props) {
 
             <div className="d-flex mx-2">
 
+              <IconButton>
+                <InfoRounded fontSize="large" className={classes.info} />
+              </IconButton>
 
             </div>
 
