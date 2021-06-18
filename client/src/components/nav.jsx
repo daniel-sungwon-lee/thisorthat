@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AppBar, Toolbar, Slide, IconButton } from '@material-ui/core';
 import { InfoRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
+import Info from './info';
 
 const useStyles = makeStyles({
   nav: {
@@ -19,6 +20,8 @@ const useStyles = makeStyles({
 export default function Nav(props) {
   const classes = useStyles()
 
+  const [open ,setOpen] = useState(false)
+
   return (
     <Slide in direction="down">
       <div className="mb-5 sticky-top">
@@ -33,9 +36,11 @@ export default function Nav(props) {
 
             <div className="d-flex mx-2">
 
-              <IconButton>
+              <IconButton onClick={() => setOpen(true)}>
                 <InfoRounded fontSize="large" className={classes.info} />
               </IconButton>
+
+              <Info open={open} setOpen={setOpen} />
 
             </div>
 
