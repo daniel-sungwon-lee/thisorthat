@@ -32,8 +32,8 @@ export default function Info(props) {
 
           <p>
             This or That helps you choose when you
-            are in a dilemma between two decisions.
-            Use it when you are in a state of decision
+            are in a dilemma between two decisions;
+            use it when you are in a state of decision
             paralysis and need to be decisive!
           </p>
 
