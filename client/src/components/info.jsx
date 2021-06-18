@@ -25,7 +25,7 @@ export default function Info(props) {
       <div className="m-3">
 
         <DialogTitle>
-          Question Mark
+          Info
         </DialogTitle>
 
         <DialogContent>
