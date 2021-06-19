@@ -32,7 +32,7 @@ export default function Home (props) {
           loading ? <Loading />
                   : <div className="d-flex justify-content-between mt-5">
 
-                      <Card raised className={classes.card}>
+                      <Card raised className={classes.card} style={{background: "#FF9478"}}>
                         <CardContent>
 
                         </CardContent>
@@ -40,7 +40,7 @@ export default function Home (props) {
 
                       <div className={classes.divider}></div>
 
-                      <Card raised className={classes.card}>
+                      <Card raised className={classes.card} style={{background: "#FFEB99"}}>
                         <CardContent>
 
                         </CardContent>
