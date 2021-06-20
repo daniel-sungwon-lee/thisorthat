@@ -41,7 +41,10 @@ const useStyles = makeStyles({
   button: {
     background: "#787680",
     color: "white",
-    borderRadius: "0.5rem"
+    borderRadius: "0.5rem",
+    "&:hover": {
+      color: "grey"
+    }
   }
 })
 
@@ -91,7 +94,7 @@ export default function Home (props) {
 
                       <Button className="mt-5" size="large" variant="contained"
                        classes={{root: classes.button}}>
-                        Choose!
+                        decide!
                       </Button>
 
                     </div>
