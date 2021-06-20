@@ -14,11 +14,29 @@ const useStyles = makeStyles({
   divider: {
     padding: "0.5rem"
   },
-  fab: {
+  fabLeft: {
     position: "absolute",
     top: "50%",
     left: "50%",
-    transform: "translate(-50%, -50%)"
+    transform: "translate(-50%, -50%)",
+    background: "#FFEB99",
+    color: "#FF9478",
+    "&:hover": {
+      background: "#FF9478",
+      color: "#FFEB99"
+    }
+  },
+  fabRight: {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    background: "#FF9478",
+    color: "#FFEB99",
+    "&:hover": {
+      background: "#FFEB99",
+      color: "#FF9478"
+    }
   },
   button: {
     background: "#787680",
@@ -50,8 +68,8 @@ export default function Home (props) {
                         <Card raised className={classes.card} style={{background: "#FF9478"}}>
                           <CardContent>
 
-                            <Fab className={classes.fab} style={{background: "#FFEB99"}}>
-                              <AddRounded fontSize="large" style={{color: "#FF9478"}} />
+                            <Fab className={classes.fabLeft}>
+                              <AddRounded fontSize="large" color="inherit" />
                             </Fab>
 
                           </CardContent>
@@ -62,8 +80,8 @@ export default function Home (props) {
                         <Card raised className={classes.card} style={{background: "#FFEB99"}}>
                           <CardContent>
 
-                            <Fab className={classes.fab} style={{background: "#FF9478"}}>
-                              <AddRounded fontSize="large" style={{color: "#FFEB99"}} />
+                            <Fab className={classes.fabRight}>
+                              <AddRounded fontSize="large" color="inherit" />
                             </Fab>
 
                           </CardContent>
