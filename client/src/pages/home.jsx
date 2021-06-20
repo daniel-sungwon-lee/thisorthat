@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card, CardContent, Fab } from '@material-ui/core';
+import { Button, Card, CardContent, Fab } from '@material-ui/core';
 import { AddRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 import Loading from '../components/loading';
@@ -19,6 +19,10 @@ const useStyles = makeStyles({
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)"
+  },
+  button: {
+    background: "#787680",
+    color: "white"
   }
 })
 
@@ -38,29 +42,38 @@ export default function Home (props) {
       <div>
         {
           loading ? <Loading />
-                  : <div className="d-flex justify-content-between mt-5">
+                  : <div>
 
-                      <Card raised className={classes.card} style={{background: "#FF9478"}}>
-                        <CardContent>
+                      <div className="d-flex justify-content-between mt-5">
 
-                          <Fab className={classes.fab} style={{background: "#FFEB99"}}>
-                            <AddRounded fontSize="large" style={{color: "#FF9478"}} />
-                          </Fab>
+                        <Card raised className={classes.card} style={{background: "#FF9478"}}>
+                          <CardContent>
 
-                        </CardContent>
-                      </Card>
+                            <Fab className={classes.fab} style={{background: "#FFEB99"}}>
+                              <AddRounded fontSize="large" style={{color: "#FF9478"}} />
+                            </Fab>
 
-                      <div className={classes.divider}></div>
+                          </CardContent>
+                        </Card>
 
-                      <Card raised className={classes.card} style={{background: "#FFEB99"}}>
-                        <CardContent>
+                        <div className={classes.divider}></div>
 
-                          <Fab className={classes.fab} style={{background: "#FF9478"}}>
-                            <AddRounded fontSize="large" style={{color: "#FFEB99"}} />
-                          </Fab>
+                        <Card raised className={classes.card} style={{background: "#FFEB99"}}>
+                          <CardContent>
 
-                        </CardContent>
-                      </Card>
+                            <Fab className={classes.fab} style={{background: "#FF9478"}}>
+                              <AddRounded fontSize="large" style={{color: "#FFEB99"}} />
+                            </Fab>
+
+                          </CardContent>
+                        </Card>
+
+                      </div>
+
+                      <Button className="mt-5" size="large" variant="contained"
+                       classes={{root: classes.button}}>
+                        Choose!
+                      </Button>
 
                     </div>
         }
