@@ -22,7 +22,8 @@ const useStyles = makeStyles({
   },
   button: {
     background: "#787680",
-    color: "white"
+    color: "white",
+    borderRadius: "0.5rem"
   }
 })
 
@@ -36,7 +37,7 @@ export default function Home (props) {
   }, [])
 
   return (
-    <div className="container">
+    <div className="container" style={{ paddingBottom: "6rem" }}>
       <h1>This or That</h1>
 
       <div>
