@@ -3,6 +3,7 @@ import { Button, Card, CardContent, Fab } from '@material-ui/core';
 import { AddRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 import Loading from '../components/loading';
+import Add from '../components/add';
 
 const useStyles = makeStyles({
   card: {
@@ -52,6 +53,7 @@ const useStyles = makeStyles({
 export default function Home (props) {
   const classes = useStyles();
   const [loading, setLoading] = useState(true)
+  const [openL, setOpenL] = useState(false)
 
   useEffect(() => {
     setLoading(false)
@@ -71,9 +73,12 @@ export default function Home (props) {
                         <Card raised className={classes.card} style={{background: "#FF9478"}}>
                           <CardContent>
 
-                            <Fab className={classes.fabLeft}>
+                            <Fab className={classes.fabLeft} onClick={() => setOpenL(true)}>
                               <AddRounded fontSize="large" color="inherit" />
                             </Fab>
+
+                            <Add open={openL} setOpen={setOpenL} type={'This'}
+                             text={'Ex: Avocado Toast'} />
 
                           </CardContent>
                         </Card>

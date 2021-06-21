@@ -4,3 +4,10 @@
 .App {
   text-align: center;
 }
+
+.MuiFormLabel-root.Mui-focused {
+  color: #FF9478 !important;
+}
+.MuiInput-root.MuiInput-underline:after {
+  border-bottom-color: #FF9478 !important;
+}
