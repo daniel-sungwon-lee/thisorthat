@@ -54,6 +54,7 @@ export default function Home (props) {
   const classes = useStyles();
   const [loading, setLoading] = useState(true)
   const [openL, setOpenL] = useState(false)
+  const [openR, setOpenR] = useState(false)
 
   useEffect(() => {
     setLoading(false)
@@ -88,9 +89,12 @@ export default function Home (props) {
                         <Card raised className={classes.card} style={{background: "#FFEB99"}}>
                           <CardContent>
 
-                            <Fab className={classes.fabRight}>
+                            <Fab className={classes.fabRight} onClick={() => setOpenR(true)}>
                               <AddRounded fontSize="large" color="inherit" />
                             </Fab>
+
+                            <Add open={openR} setOpen={setOpenR} type={'That'}
+                             text={'Ex: Bacon and Waffles'} />
 
                           </CardContent>
                         </Card>
