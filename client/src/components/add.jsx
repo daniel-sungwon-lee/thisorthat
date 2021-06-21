@@ -16,12 +16,8 @@ const useStyles = makeStyles({
 })
 
 export default function Add(props) {
-  const { open, setOpen, type, text, position } = props
+  const { open, setOpen, type, text } = props
   const classes = useStyles();
-
-  const Transition = React.forwardRef(function Transition(props, ref) {
-    return <Slide direction={position} ref={ref} {...props} />
-  })
 
   const [add, setAdd] = useState('')
 
