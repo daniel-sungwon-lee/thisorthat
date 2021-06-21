@@ -79,7 +79,7 @@ export default function Home (props) {
                             </Fab>
 
                             <Add open={openL} setOpen={setOpenL} type={'This'}
-                             text={'Ex: Avocado Toast'} position={'right'} />
+                             text={'Ex: Avocado Toast'} />
 
                           </CardContent>
                         </Card>
@@ -94,7 +94,7 @@ export default function Home (props) {
                             </Fab>
 
                             <Add open={openR} setOpen={setOpenR} type={'That'}
-                             text={'Ex: Bacon and Waffles'} position={'left'} />
+                             text={'Ex: Bacon and Waffles'} />
 
                           </CardContent>
                         </Card>
