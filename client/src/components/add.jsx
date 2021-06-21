@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Zoom, TextField }
-        from '@material-ui/core';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField,
+         Slide } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
@@ -16,14 +16,18 @@ const useStyles = makeStyles({
 })
 
 export default function Add(props) {
-  const { open, setOpen, type, text } = props
+  const { open, setOpen, type, text, position } = props
   const classes = useStyles();
+
+  const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction={position} ref={ref} {...props} />
+  })
 
   const [add, setAdd] = useState('')
 
   return (
     <Dialog open={open} onClose={() => setOpen(false)} scroll="body"
-      TransitionComponent={Zoom} classes={{ paper: classes.dialog }}>
+      TransitionComponent={Slide} classes={{ paper: classes.dialog }}>
       <div className="m-3">
 
         <DialogTitle>
