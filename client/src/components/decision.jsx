@@ -1,12 +1,12 @@
 import React from 'react';
-import { IconButton, Dialog, DialogActions, DialogContent, Zoom }
-        from '@material-ui/core';
+import { IconButton, Dialog, Zoom } from '@material-ui/core';
 import { ClearRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   dialog: {
-    width: "75%",
+    minWidth: "75%",
+    minHeight: "60%",
     borderRadius: "1rem",
     position: "relative"
   },
@@ -14,6 +14,12 @@ const useStyles = makeStyles({
     position: "absolute",
     top: "0.5rem",
     right: "0.5rem"
+  },
+  decision: {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)"
   }
 })
 
@@ -26,24 +32,16 @@ export default function Decision(props) {
       TransitionComponent={Zoom} classes={{ paper: classes.dialog }}>
       <div className="m-3">
 
-        <DialogContent>
+        <div className={classes.decision}>
+          <h1 className="m-0 text-break mx-1">
+            {what}!
+          </h1>
+        </div>
 
-          <div className="text-center">
-            <h1 className="m-0 text-break mx-1">
-              {what}
-            </h1>
-          </div>
-
-        </DialogContent>
-
-        <DialogActions>
-
-          <IconButton color="secondary" className={classes.clear}
-            onClick={() => setOpen(false)}>
-             <ClearRounded style={{fontSize:"28px"}} />
-          </IconButton>
-
-        </DialogActions>
+        <IconButton color="secondary" className={classes.clear}
+          onClick={() => setOpen(false)}>
+            <ClearRounded fontSize="large" />
+        </IconButton>
 
       </div>
     </Dialog>

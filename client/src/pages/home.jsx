@@ -92,11 +92,10 @@ export default function Home (props) {
 
   const handleDecision = () => {
     const num = Math.round(Math.random())
-    setOpenD(true)
-
     num === 0 ? setWhat(l)
               : setWhat(r)
 
+    setOpenD(true)
   }
 
   useEffect(() => {
