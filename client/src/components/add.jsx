@@ -23,10 +23,24 @@ export default function Add(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
+    if (type === 'This') {
+      window.localStorage.setItem('this', add)
+      setOpen(false)
+
+    } else if (type === 'That') {
+      window.localStorage.setItem('that', add)
+      setOpen(false)
+    }
+  }
+
+  const handleClose = () => {
+    setAdd('')
+    setOpen(false)
   }
 
   return (
-    <Dialog open={open} onClose={() => setOpen(false)} scroll="body"
+    <Dialog open={open} onClose={handleClose} scroll="body"
       TransitionComponent={Zoom} classes={{ paper: classes.dialog }}>
       <div className="m-3">
 
@@ -46,8 +60,8 @@ export default function Add(props) {
           <DialogActions>
 
             <Button color="secondary" classes={{ text: classes.button }}
-              onClick={() => setOpen(false)}>
-              close
+              onClick={handleClose}>
+               close
             </Button>
 
             <Button style={{color: "#FF9478"}} classes={{ text: classes.button }}
