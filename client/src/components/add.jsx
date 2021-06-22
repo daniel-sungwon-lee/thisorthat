@@ -16,19 +16,22 @@ const useStyles = makeStyles({
 })
 
 export default function Add(props) {
-  const { open, setOpen, type, text } = props
+  const { open, setOpen, type, text, setLoading } = props
   const classes = useStyles();
 
   const [add, setAdd] = useState('')
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
 
     if (type === 'This') {
+      setLoading(true)
       window.localStorage.setItem('this', add)
       setAdd('')
       setOpen(false)
 
     } else if (type === 'That') {
+      setLoading(true)
       window.localStorage.setItem('that', add)
       setAdd('')
       setOpen(false)

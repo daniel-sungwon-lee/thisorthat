@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Card, CardContent, Fab } from '@material-ui/core';
-import { AddRounded } from '@material-ui/icons';
+import { Button, Card, CardContent, Fab, IconButton } from '@material-ui/core';
+import { AddRounded, ClearRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 import Loading from '../components/loading';
 import Add from '../components/add';
@@ -52,6 +52,11 @@ const useStyles = makeStyles({
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)"
+  },
+  clear: {
+    position: "absolute",
+    top: "1rem",
+    left: "1rem"
   }
 })
 
@@ -64,12 +69,28 @@ export default function Home (props) {
   const [left, setLeft] = useState(null)
   const [right, setRight] = useState(null)
 
+  let l = window.localStorage.getItem('this')
+  let r = window.localStorage.getItem('that')
+
+  const handleClear = (type) => {
+    if (type === 'this') {
+      setLoading(true)
+      window.localStorage.removeItem('this')
+
+    } else if (type === 'that') {
+      setLoading(true)
+      window.localStorage.removeItem('that')
+
+    }
+  }
+
   useEffect(() => {
-    setLeft(window.localStorage.getItem('this'))
-    setRight(window.localStorage.getItem('that'))
+
+    setLeft(l)
+    setRight(r)
 
     setLoading(false)
-  }, [])
+  }, [l, r])
 
   return (
     <div className="container" style={{ paddingBottom: "6rem" }}>
@@ -87,7 +108,14 @@ export default function Home (props) {
 
                             {
                               left ? <div>
+
                                        <h2 className={classes.word}>{left}</h2>
+
+                                       <IconButton onClick={() => handleClear('this')}
+                                        className={classes.clear}>
+                                         <ClearRounded fontSize="large" color="secondary" />
+                                       </IconButton>
+
                                      </div>
 
                                    : <div>
@@ -96,7 +124,7 @@ export default function Home (props) {
                                        </Fab>
 
                                        <Add open={openL} setOpen={setOpenL} type={'This'}
-                                        text={'Ex: Avocado Toast'} />
+                                        text={'Ex: Avocado Toast'} setLoading={setLoading} />
                                      </div>
                             }
 
@@ -110,7 +138,14 @@ export default function Home (props) {
 
                             {
                               right ? <div>
+
                                         <h2 className={classes.word}>{right}</h2>
+
+                                        <IconButton onClick={() => handleClear('that')}
+                                         className={classes.clear}>
+                                          <ClearRounded fontSize="large" color="secondary" />
+                                        </IconButton>
+
                                       </div>
 
                                     : <div>
@@ -119,7 +154,7 @@ export default function Home (props) {
                                         </Fab>
 
                                         <Add open={openR} setOpen={setOpenR} type={'That'}
-                                         text={'Ex: Bacon and Waffles'} />
+                                         text={'Ex: Bacon and Waffles'} setLoading={setLoading} />
                                      </div>
                             }
 
