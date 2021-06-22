@@ -55,8 +55,13 @@ export default function Home (props) {
   const [loading, setLoading] = useState(true)
   const [openL, setOpenL] = useState(false)
   const [openR, setOpenR] = useState(false)
+  const [left, setLeft] = useState(null)
+  const [right, setRight] = useState(null)
 
   useEffect(() => {
+    setLeft(window.localStorage.getItem('this'))
+    setRight(window.localStorage.getItem('that'))
+
     setLoading(false)
   }, [])
 
