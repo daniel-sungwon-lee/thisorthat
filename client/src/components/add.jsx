@@ -21,8 +21,7 @@ export default function Add(props) {
 
   const [add, setAdd] = useState('')
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const handleSubmit = () => {
 
     if (type === 'This') {
       window.localStorage.setItem('this', add)
