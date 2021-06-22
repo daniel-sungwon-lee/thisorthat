@@ -24,12 +24,13 @@ const useStyles = makeStyles({
 })
 
 export default function Decision(props) {
-  const { open, setOpen, what } = props
+  const { open, setOpen, what, color } = props
   const classes = useStyles();
 
   return (
     <Dialog open={open} onClose={() => setOpen(false)} scroll="body"
-      TransitionComponent={Zoom} classes={{ paper: classes.dialog }}>
+      TransitionComponent={Zoom} classes={{ paper: classes.dialog }}
+      style={{background: color}}>
       <div className="m-3">
 
         <div className={classes.decision}>

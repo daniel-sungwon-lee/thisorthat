@@ -74,6 +74,7 @@ export default function Home (props) {
   const [button, setButton] = useState(false)
   const [openD, setOpenD] = useState(false)
   const [what, setWhat] = useState(null)
+  const [color, setColor] = useState('')
 
   let l = window.localStorage.getItem('this')
   let r = window.localStorage.getItem('that')
@@ -92,8 +93,15 @@ export default function Home (props) {
 
   const handleDecision = () => {
     const num = Math.round(Math.random())
-    num === 0 ? setWhat(l)
-              : setWhat(r)
+
+    if(num === 0) {
+      setWhat(l)
+      setColor('#FF9478')
+
+    } else {
+      setWhat(r)
+      setColor('#FFEB99')
+    }
 
     setOpenD(true)
   }
@@ -191,7 +199,7 @@ export default function Home (props) {
                       </Button>
 
                       <Decision open={openD} setOpen={setOpenD}
-                       what={what} />
+                       what={what} color={color} />
 
                     </div>
         }
