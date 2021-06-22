@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField,
-         Slide } from '@material-ui/core';
+         Zoom } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
@@ -23,7 +23,7 @@ export default function Add(props) {
 
   return (
     <Dialog open={open} onClose={() => setOpen(false)} scroll="body"
-      TransitionComponent={Slide} classes={{ paper: classes.dialog }}>
+      TransitionComponent={Zoom} classes={{ paper: classes.dialog }}>
       <div className="m-3">
 
         <DialogTitle>
