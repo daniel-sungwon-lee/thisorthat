@@ -4,6 +4,7 @@ import { AddRounded, ClearRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 import Loading from '../components/loading';
 import Add from '../components/add';
+import Decision from '../components/decision';
 
 const useStyles = makeStyles({
   card: {
@@ -69,6 +70,8 @@ export default function Home (props) {
   const [left, setLeft] = useState(null)
   const [right, setRight] = useState(null)
   const [button, setButton] = useState(false)
+  const [openD, setOpenD] = useState(false)
+  const [what, setWhat] = useState(null)
 
   let l = window.localStorage.getItem('this')
   let r = window.localStorage.getItem('that')
@@ -87,9 +90,10 @@ export default function Home (props) {
 
   const handleDecision = () => {
     const num = Math.round(Math.random())
+    setOpenD(true)
 
-    num === 0 ? console.log(l)
-              : console.log(r)
+    num === 0 ? setWhat(l)
+              : setWhat(r)
 
   }
 
@@ -184,6 +188,9 @@ export default function Home (props) {
                        disabled={button}>
                          decide!
                       </Button>
+
+                      <Decision open={openD} setOpen={setOpenD}
+                       what={what} />
 
                     </div>
         }
