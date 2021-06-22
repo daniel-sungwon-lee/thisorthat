@@ -52,7 +52,9 @@ const useStyles = makeStyles({
     position: "absolute",
     top: "50%",
     left: "50%",
-    transform: "translate(-50%, -50%)"
+    transform: "translate(-50%, -50%)",
+    wordBreak: "break-word",
+    wordWrap: "break-word"
   },
   clear: {
     position: "absolute",

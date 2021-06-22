@@ -29,7 +29,7 @@ export default function Decision(props) {
         <DialogContent>
 
           <div className="text-center">
-            <h1 className="m-0">
+            <h1 className="m-0 text-break mx-1">
               {what}
             </h1>
           </div>
