@@ -34,9 +34,9 @@ export default function Nav(props) {
               </div>
             </a>
 
-            <div className="d-flex mx-2">
+            <div className="d-flex ml-2">
 
-              <IconButton onClick={() => setOpen(true)} className="p-0">
+              <IconButton onClick={() => setOpen(true)}>
                 <InfoRounded fontSize="large" className={classes.info} />
               </IconButton>
 
