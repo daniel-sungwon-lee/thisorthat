@@ -21,6 +21,10 @@ export default function Add(props) {
 
   const [add, setAdd] = useState('')
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  }
+
   return (
     <Dialog open={open} onClose={() => setOpen(false)} scroll="body"
       TransitionComponent={Zoom} classes={{ paper: classes.dialog }}>
@@ -30,22 +34,29 @@ export default function Add(props) {
           Add {type}
         </DialogTitle>
 
-        <DialogContent>
+        <form onSubmit={handleSubmit}>
+          <DialogContent>
 
-          <TextField multiline label="Something" helperText={text}
-           color="secondary" value={add} onChange={(e) => setAdd(e.target.value)}
-           required InputLabelProps={{ required: false }} fullWidth />
+            <TextField multiline label="Something" helperText={text}
+            color="secondary" value={add} onChange={(e) => setAdd(e.target.value)}
+            required InputLabelProps={{ required: false }} fullWidth />
 
-        </DialogContent>
+          </DialogContent>
 
-        <DialogActions>
+          <DialogActions>
 
-          <Button color="secondary" classes={{ text: classes.button }}
-            onClick={() => setOpen(false)}>
-            close
-          </Button>
+            <Button color="secondary" classes={{ text: classes.button }}
+              onClick={() => setOpen(false)}>
+              close
+            </Button>
 
-        </DialogActions>
+            <Button style={{color: "#FF9478"}} classes={{ text: classes.button }}
+              type="submit">
+              add
+            </Button>
+
+          </DialogActions>
+        </form>
 
       </div>
     </Dialog>
