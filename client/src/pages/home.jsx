@@ -68,6 +68,7 @@ export default function Home (props) {
   const [openR, setOpenR] = useState(false)
   const [left, setLeft] = useState(null)
   const [right, setRight] = useState(null)
+  const [button, setButton] = useState(false)
 
   let l = window.localStorage.getItem('this')
   let r = window.localStorage.getItem('that')
@@ -84,12 +85,27 @@ export default function Home (props) {
     }
   }
 
+  const handleDecision = () => {
+    const num = Math.round(Math.random())
+
+    num === 0 ? console.log(l)
+              : console.log(r)
+
+  }
+
   useEffect(() => {
 
     setLeft(l)
     setRight(r)
 
     setLoading(false)
+
+    if(l === null || r === null) {
+      setButton(true)
+    } else {
+      setButton(false)
+    }
+
   }, [l, r])
 
   return (
@@ -164,8 +180,9 @@ export default function Home (props) {
                       </div>
 
                       <Button className="mt-5" size="large" variant="contained"
-                       classes={{root: classes.button}}>
-                        decide!
+                       classes={{root: classes.button}} onClick={handleDecision}
+                       disabled={button}>
+                         decide!
                       </Button>
 
                     </div>
