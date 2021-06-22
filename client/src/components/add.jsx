@@ -26,10 +26,12 @@ export default function Add(props) {
 
     if (type === 'This') {
       window.localStorage.setItem('this', add)
+      setAdd('')
       setOpen(false)
 
     } else if (type === 'That') {
       window.localStorage.setItem('that', add)
+      setAdd('')
       setOpen(false)
     }
   }

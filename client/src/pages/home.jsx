@@ -46,6 +46,13 @@ const useStyles = makeStyles({
     "&:hover": {
       color: "grey"
     }
+  },
+  word: {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    color: "#787680"
   }
 })
 
@@ -79,12 +86,20 @@ export default function Home (props) {
                         <Card raised className={classes.card} style={{background: "#FF9478"}}>
                           <CardContent>
 
-                            <Fab className={classes.fabLeft} onClick={() => setOpenL(true)}>
-                              <AddRounded fontSize="large" color="inherit" />
-                            </Fab>
+                            {
+                              left ? <div>
+                                       <h2 className={classes.word}>{left}</h2>
+                                     </div>
 
-                            <Add open={openL} setOpen={setOpenL} type={'This'}
-                             text={'Ex: Avocado Toast'} />
+                                   : <div>
+                                       <Fab className={classes.fabLeft} onClick={() => setOpenL(true)}>
+                                         <AddRounded fontSize="large" color="inherit" />
+                                       </Fab>
+
+                                       <Add open={openL} setOpen={setOpenL} type={'This'}
+                                        text={'Ex: Avocado Toast'} />
+                                     </div>
+                            }
 
                           </CardContent>
                         </Card>
@@ -94,12 +109,20 @@ export default function Home (props) {
                         <Card raised className={classes.card} style={{background: "#FFEB99"}}>
                           <CardContent>
 
-                            <Fab className={classes.fabRight} onClick={() => setOpenR(true)}>
-                              <AddRounded fontSize="large" color="inherit" />
-                            </Fab>
+                            {
+                              right ? <div>
+                                        <h2 className={classes.word}>{right}</h2>
+                                      </div>
 
-                            <Add open={openR} setOpen={setOpenR} type={'That'}
-                             text={'Ex: Bacon and Waffles'} />
+                                    : <div>
+                                        <Fab className={classes.fabRight} onClick={() => setOpenR(true)}>
+                                          <AddRounded fontSize="large" color="inherit" />
+                                        </Fab>
+
+                                        <Add open={openR} setOpen={setOpenR} type={'That'}
+                                         text={'Ex: Bacon and Waffles'} />
+                                     </div>
+                            }
 
                           </CardContent>
                         </Card>
