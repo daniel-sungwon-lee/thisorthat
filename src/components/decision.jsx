@@ -35,7 +35,7 @@ export default function Decision(props) {
 
         <div className={classes.decision}>
           <h1 className="m-0 text-break mx-1">
-            {what}!
+            {what}
           </h1>
         </div>
 
