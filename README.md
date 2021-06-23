@@ -1,5 +1,7 @@
 # This or That
-Helps you choose for those who have decision paralysis
+Helps you choose for those who are in a state of decision paralysis and need to make a decision quick.
+
+Tech stack: React, Material-UI, JavaScript, npm, Bootstrap, HTML/CSS, Netlify
 
 ## Live Link
 https://thisorthattt.netlify.app/
