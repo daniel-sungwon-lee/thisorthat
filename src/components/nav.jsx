@@ -30,7 +30,7 @@ export default function Nav(props) {
 
             <a href="/" className="text-decoration-none mx-2">
               <div>
-                <img src="images/choice.svg" alt="Choice logo" width="60" />
+                <img src="images/choice.svg" alt="This or That logo" width="60" />
               </div>
             </a>
 
