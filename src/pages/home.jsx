@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Card, CardContent, Fab, IconButton } from '@material-ui/core';
+import { Button, Card, CardContent, Fab, IconButton,
+         Slide, Zoom } from '@material-ui/core';
 import { AddRounded, ClearRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 import Loading from '../components/loading';
@@ -130,73 +131,81 @@ export default function Home (props) {
           loading ? <Loading />
                   : <div>
 
-                      <div className="d-flex justify-content-between mt-5">
+                      <Zoom in>
 
-                        <Card raised className={classes.card} style={{background: "#FF9478"}}>
-                          <CardContent>
+                        <div className="d-flex justify-content-between mt-5">
 
-                            {
-                              left ? <div>
+                          <Card raised className={classes.card} style={{background: "#FF9478"}}>
+                            <CardContent>
 
-                                       <h2 className={classes.word}>{left}</h2>
+                              {
+                                left ? <div>
 
-                                       <IconButton onClick={() => handleClear('this')}
-                                        className={classes.clear}>
-                                         <ClearRounded fontSize="large" color="secondary" />
-                                       </IconButton>
+                                        <h2 className={classes.word}>{left}</h2>
 
-                                     </div>
-
-                                   : <div>
-                                       <Fab className={classes.fabLeft} onClick={() => setOpenL(true)}>
-                                         <AddRounded fontSize="large" color="inherit" />
-                                       </Fab>
-
-                                       <Add open={openL} setOpen={setOpenL} type={'This'}
-                                        text={'Ex: Avocado Toast'} setLoading={setLoading} />
-                                     </div>
-                            }
-
-                          </CardContent>
-                        </Card>
-
-                        <div className={classes.divider}></div>
-
-                        <Card raised className={classes.card} style={{background: "#FFEB99"}}>
-                          <CardContent>
-
-                            {
-                              right ? <div>
-
-                                        <h2 className={classes.word}>{right}</h2>
-
-                                        <IconButton onClick={() => handleClear('that')}
-                                         className={classes.clear}>
+                                        <IconButton onClick={() => handleClear('this')}
+                                          className={classes.clear}>
                                           <ClearRounded fontSize="large" color="secondary" />
                                         </IconButton>
 
                                       </div>
 
                                     : <div>
-                                        <Fab className={classes.fabRight} onClick={() => setOpenR(true)}>
+                                        <Fab className={classes.fabLeft} onClick={() => setOpenL(true)}>
                                           <AddRounded fontSize="large" color="inherit" />
                                         </Fab>
 
-                                        <Add open={openR} setOpen={setOpenR} type={'That'}
-                                         text={'Ex: Bacon and Waffles'} setLoading={setLoading} />
-                                     </div>
-                            }
+                                        <Add open={openL} setOpen={setOpenL} type={'This'}
+                                          text={'Ex: Avocado Toast'} setLoading={setLoading} />
+                                      </div>
+                              }
 
-                          </CardContent>
-                        </Card>
+                            </CardContent>
+                          </Card>
 
-                      </div>
+                          <div className={classes.divider}></div>
 
-                      <Button className="mt-5" size="large" variant="contained"
-                       classes={{root: classes.button}} onClick={handleDecision}
-                       disabled={button}>
-                         decide!
-                      </Button>
+                          <Card raised className={classes.card} style={{background: "#FFEB99"}}>
+                            <CardContent>
+
+                              {
+                                right ? <div>
+
+                                          <h2 className={classes.word}>{right}</h2>
+
+                                          <IconButton onClick={() => handleClear('that')}
+                                          className={classes.clear}>
+                                            <ClearRounded fontSize="large" color="secondary" />
+                                          </IconButton>
+
+                                        </div>
+
+                                      : <div>
+                                          <Fab className={classes.fabRight} onClick={() => setOpenR(true)}>
+                                            <AddRounded fontSize="large" color="inherit" />
+                                          </Fab>
+
+                                          <Add open={openR} setOpen={setOpenR} type={'That'}
+                                          text={'Ex: Bacon and Waffles'} setLoading={setLoading} />
+                                      </div>
+                              }
+
+                            </CardContent>
+                          </Card>
+
+                        </div>
+
+                      </Zoom>
+
+                      <Slide in direction="up">
+
+                        <Button className="mt-5" size="large" variant="contained"
+                        classes={{root: classes.button}} onClick={handleDecision}
+                        disabled={button}>
+                          decide!
+                        </Button>
+
+                      </Slide>
 
                       <Decision open={openD} setOpen={setOpenD}
                        what={what} color={color} />
