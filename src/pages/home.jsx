@@ -134,71 +134,67 @@ export default function Home (props) {
           loading ? <Loading />
                   : <div>
 
-                      <Zoom in>
+                      <div className="d-flex justify-content-between mt-5">
 
-                        <div className="d-flex justify-content-between mt-5">
+                        <Card raised className={classes.card} style={{background: "#FF9478"}}>
+                          <CardContent>
 
-                          <Card raised className={classes.card} style={{background: "#FF9478"}}>
-                            <CardContent>
+                            {
+                              left ? <div>
 
-                              {
-                                left ? <div>
+                                      <h2 className={classes.word}>{left}</h2>
 
-                                        <h2 className={classes.word}>{left}</h2>
+                                      <IconButton onClick={() => handleClear('this')}
+                                        className={classes.clear}>
+                                        <ClearRounded fontSize="large" color="secondary" />
+                                      </IconButton>
 
-                                        <IconButton onClick={() => handleClear('this')}
-                                          className={classes.clear}>
+                                    </div>
+
+                                  : <div>
+                                      <Fab className={classes.fabLeft} onClick={() => setOpenL(true)}>
+                                        <AddRounded fontSize="large" color="inherit" />
+                                      </Fab>
+
+                                      <Add open={openL} setOpen={setOpenL} type={'This'}
+                                        text={'Ex: Avocado Toast'} setLoading={setLoading} />
+                                    </div>
+                            }
+
+                          </CardContent>
+                        </Card>
+
+                        <div className={classes.divider}></div>
+
+                        <Card raised className={classes.card} style={{background: "#FFEB99"}}>
+                          <CardContent>
+
+                            {
+                              right ? <div>
+
+                                        <h2 className={classes.word}>{right}</h2>
+
+                                        <IconButton onClick={() => handleClear('that')}
+                                        className={classes.clear}>
                                           <ClearRounded fontSize="large" color="secondary" />
                                         </IconButton>
 
                                       </div>
 
                                     : <div>
-                                        <Fab className={classes.fabLeft} onClick={() => setOpenL(true)}>
+                                        <Fab className={classes.fabRight} onClick={() => setOpenR(true)}>
                                           <AddRounded fontSize="large" color="inherit" />
                                         </Fab>
 
-                                        <Add open={openL} setOpen={setOpenL} type={'This'}
-                                          text={'Ex: Avocado Toast'} setLoading={setLoading} />
-                                      </div>
-                              }
+                                        <Add open={openR} setOpen={setOpenR} type={'That'}
+                                        text={'Ex: Bacon and Waffles'} setLoading={setLoading} />
+                                    </div>
+                            }
 
-                            </CardContent>
-                          </Card>
+                          </CardContent>
+                        </Card>
 
-                          <div className={classes.divider}></div>
-
-                          <Card raised className={classes.card} style={{background: "#FFEB99"}}>
-                            <CardContent>
-
-                              {
-                                right ? <div>
-
-                                          <h2 className={classes.word}>{right}</h2>
-
-                                          <IconButton onClick={() => handleClear('that')}
-                                          className={classes.clear}>
-                                            <ClearRounded fontSize="large" color="secondary" />
-                                          </IconButton>
-
-                                        </div>
-
-                                      : <div>
-                                          <Fab className={classes.fabRight} onClick={() => setOpenR(true)}>
-                                            <AddRounded fontSize="large" color="inherit" />
-                                          </Fab>
-
-                                          <Add open={openR} setOpen={setOpenR} type={'That'}
-                                          text={'Ex: Bacon and Waffles'} setLoading={setLoading} />
-                                      </div>
-                              }
-
-                            </CardContent>
-                          </Card>
-
-                        </div>
-
-                      </Zoom>
+                      </div>
 
                       <Slide in direction="up">
 
