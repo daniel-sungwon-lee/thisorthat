@@ -124,7 +124,10 @@ export default function Home (props) {
 
   return (
     <div className="container" style={{ paddingBottom: "6rem" }}>
-      <h1>This or That</h1>
+
+      <Zoom in>
+        <h1>This or That</h1>
+      </Zoom>
 
       <div>
         {
