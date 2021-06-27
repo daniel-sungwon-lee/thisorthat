@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Card, CardContent, Fab, IconButton,
-         Slide, Zoom } from '@material-ui/core';
+         Zoom } from '@material-ui/core';
 import { AddRounded, ClearRounded } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 import Loading from '../components/loading';
@@ -196,15 +196,11 @@ export default function Home (props) {
 
                       </div>
 
-                      <Slide in direction="up">
-
-                        <Button className="mt-5" size="large" variant="contained"
-                        classes={{root: classes.button}} onClick={handleDecision}
-                        disabled={button}>
-                          decide!
-                        </Button>
-
-                      </Slide>
+                      <Button className="mt-5" size="large" variant="contained"
+                      classes={{root: classes.button}} onClick={handleDecision}
+                      disabled={button}>
+                        decide!
+                      </Button>
 
                       <Decision open={openD} setOpen={setOpenD}
                        what={what} color={color} />
